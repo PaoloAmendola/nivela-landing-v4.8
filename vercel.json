@@ -1,15 +1,7 @@
 {
-  "version": 2,
-  "buildCommand": "vite build",
+  "buildCommand": "npm run build",
   "installCommand": "npm ci || npm install",
   "outputDirectory": "dist",
-  "framework": "vite",
-
-  "functions": {
-    "api/**/*": {
-      "runtime": "nodejs20.x"
-    }
-  },
 
   "headers": [
     {
@@ -49,9 +41,7 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "www.nivela.bembeauty.com.br" }
-      ],
+      "has": [{ "type": "host", "value": "www.nivela.bembeauty.com.br" }],
       "destination": "https://nivela.bembeauty.com.br/:path",
       "permanent": true
     },
