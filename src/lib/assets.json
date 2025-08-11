@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "imagem": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/imagens/nivela-hero.webp",
+    "logo_bembeauty": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/imagens/logo-bembeauty-transparente.png"
+  },
+  "manifesto": {
+    "video": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/videos/video-manifesto-oficial-compactado.mp4"
+  },
+  "conheca_nivela": {
+    "imagem": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/imagens/conheca-nivela.webp"
+  },
+  "tecnologia": {
+    "video": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/videos/OFICIAL-Astroquat-animacaao-julho.mp4"
+  },
+  "favicons": {
+    "apple_touch": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/apple-touch-icon.png",
+    "favicon_96": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/favicon-96x96.png",
+    "favicon_ico": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/favicon.ico",
+    "favicon_svg": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/favicon.svg",
+    "webmanifest": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/site.webmanifest",
+    "manifest_192": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/web-app-manifest-192x192.png",
+    "manifest_512": "https://wsjrasprpcwkwmcbfdpv.supabase.co/storage/v1/object/public/favicons/web-app-manifest-512x512.png"
+  }
+}

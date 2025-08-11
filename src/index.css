@@ -1,0 +1,642 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* NIVELA® Brand Colors - Cores Oficiais da Marca */
+    --brand-black: 198 52% 8%;           /* #0D181C - Preto */
+    --brand-latte: 30 33% 73%;           /* #D9C0AA - Café com Leite */
+    --brand-caramel: 20 79% 35%;         /* #9D4916 - Caramelo */
+    --brand-cloud: 201 23% 70%;          /* #A6B8C1 - Azul Nuvem */
+    --brand-deep: 196 39% 25%;           /* #254C5A - Azul Profundo */
+    --brand-light: 0 0% 98%;             /* #FAFAFA - Branco Premium */
+    
+    /* Base Theme - Dark Premium */
+    --background: 198 52% 8%;            /* Brand Black */
+    --foreground: 30 33% 73%;            /* Brand Latte */
+
+    --card: 198 45% 12%;
+    --card-foreground: 30 33% 73%;
+
+    --popover: 198 45% 12%;
+    --popover-foreground: 30 33% 73%;
+
+    --primary: 30 33% 73%;               /* Brand Latte */
+    --primary-foreground: 198 52% 8%;
+
+    --secondary: 196 39% 25%;            /* Brand Deep */
+    --secondary-foreground: 30 33% 73%;
+
+    --muted: 198 45% 15%;
+    --muted-foreground: 201 23% 70%;     /* Brand Cloud */
+
+    --accent: 20 79% 35%;                /* Brand Caramel */
+    --accent-foreground: 30 33% 73%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 30 33% 73%;
+
+    --border: 198 35% 20%;
+    --input: 198 35% 18%;
+    --ring: 30 33% 73%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients - Enhanced for premium experience */
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-black)), hsl(var(--brand-deep)));
+    --gradient-brand-dark: linear-gradient(135deg, hsl(198 45% 8%), hsl(var(--brand-deep)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--brand-caramel)), hsl(var(--brand-latte)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--brand-black)), hsl(198 45% 12%));
+    --gradient-radial: radial-gradient(ellipse 1200px 800px at 70% 50%, hsl(217 92% 76% / 0.15) 0%, hsl(217 92% 76% / 0.08) 30%, hsl(217 92% 76% / 0.03) 50%, transparent 70%);
+    --gradient-premium: linear-gradient(135deg, hsl(var(--brand-caramel)) 0%, hsl(var(--brand-latte)) 50%, hsl(var(--brand-caramel)) 100%);
+    
+    /* BemTech gradients - brand consistent */
+    --gradient-tech-primary: linear-gradient(135deg, hsl(var(--brand-deep) / 0.3), hsl(var(--brand-cloud) / 0.2));
+    --gradient-tech-secondary: linear-gradient(135deg, hsl(var(--brand-caramel) / 0.2), hsl(var(--brand-latte) / 0.3));
+    --gradient-tech-accent: linear-gradient(135deg, hsl(var(--brand-latte) / 0.2), hsl(var(--brand-cloud) / 0.3));
+    
+    /* Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(var(--brand-black) / 0.8);
+    --shadow-glow: 0 0 40px hsl(var(--brand-latte) / 0.1);
+    --shadow-card: 0 8px 32px hsl(var(--brand-black) / 0.4);
+    --shadow-card-hover: 0 16px 48px hsl(var(--brand-black) / 0.6);
+    
+    /* Transitions - Optimized for performance */
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elegant: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-micro: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 198 45% 12%;
+    --sidebar-foreground: 30 33% 73%;
+    --sidebar-primary: 20 79% 35%;
+    --sidebar-primary-foreground: 30 33% 73%;
+    --sidebar-accent: 30 33% 73%;
+    --sidebar-accent-foreground: 198 52% 8%;
+    --sidebar-border: 198 35% 20%;
+    --sidebar-ring: 30 33% 73%;
+    
+    /* Enhanced Colors for Badges and CTAs */
+    --badge-premium: 20 79% 45%;         /* More intense caramel */
+    --badge-tech: 196 39% 35%;           /* More intense deep blue */
+    --badge-success: 142 76% 36%;        /* Intense green */
+    --cta-primary: 20 85% 40%;           /* High-intensity caramel */
+    --cta-secondary: 196 45% 30%;        /* High-intensity deep */
+  }
+
+  /* Light Theme */
+  .light {
+    /* NIVELA® Brand Colors for Light Theme */
+    --background: 0 0% 98%;               /* Brand Light */
+    --foreground: 198 52% 8%;             /* Brand Black */
+    
+    /* Enhanced Light Theme Badge Colors */
+    --badge-premium: 20 85% 35%;          /* More vibrant for light theme */
+    --badge-tech: 196 50% 25%;            /* More vibrant deep blue */
+    --badge-success: 142 80% 30%;         /* More vibrant green */
+    --cta-primary: 20 90% 35%;            /* High-intensity for light */
+    --cta-secondary: 196 60% 25%;         /* High-intensity deep for light */
+
+    --card: 0 0% 100%;
+    --card-foreground: 198 52% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 198 52% 8%;
+
+    --primary: 198 52% 8%;                /* Brand Black */
+    --primary-foreground: 30 33% 73%;     /* Brand Latte */
+
+    --secondary: 30 33% 73%;              /* Brand Latte */
+    --secondary-foreground: 198 52% 8%;
+
+    --muted: 201 23% 90%;
+    --muted-foreground: 196 39% 25%;      /* Brand Deep */
+
+    --accent: 20 79% 35%;                 /* Brand Caramel */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 201 23% 85%;
+    --input: 201 23% 90%;
+    --ring: 198 52% 8%;
+
+    /* Light theme gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-light)), hsl(var(--brand-cloud)));
+    --gradient-brand-dark: linear-gradient(135deg, hsl(201 23% 95%), hsl(var(--brand-cloud)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--brand-light)), hsl(201 23% 95%));
+    
+    /* Light shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(var(--brand-black) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--brand-caramel) / 0.1);
+    --shadow-card: 0 8px 32px hsl(var(--brand-black) / 0.08);
+    --shadow-card-hover: 0 16px 48px hsl(var(--brand-black) / 0.12);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 198 52% 8%;
+    --sidebar-primary: 198 52% 8%;
+    --sidebar-primary-foreground: 30 33% 73%;
+    --sidebar-accent: 201 23% 90%;
+    --sidebar-accent-foreground: 198 52% 8%;
+    --sidebar-border: 201 23% 85%;
+    --sidebar-ring: 198 52% 8%;
+  }
+
+  .dark {
+    /* Keep existing dark theme */
+    --background: 198 52% 8%;
+    --foreground: 30 33% 73%;
+    --card: 198 45% 12%;
+    --card-foreground: 30 33% 73%;
+    --popover: 198 45% 12%;
+    --popover-foreground: 30 33% 73%;
+    --primary: 30 33% 73%;
+    --primary-foreground: 198 52% 8%;
+    --secondary: 196 39% 25%;
+    --secondary-foreground: 30 33% 73%;
+    --muted: 198 45% 15%;
+    --muted-foreground: 201 23% 70%;
+    --accent: 20 79% 35%;
+    --accent-foreground: 30 33% 73%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 30 33% 73%;
+    --border: 198 35% 20%;
+    --input: 198 35% 18%;
+    --ring: 30 33% 73%;
+    --sidebar-background: 198 45% 12%;
+    --sidebar-foreground: 30 33% 73%;
+    --sidebar-primary: 30 33% 73%;
+    --sidebar-primary-foreground: 198 52% 8%;
+    --sidebar-accent: 198 35% 20%;
+    --sidebar-accent-foreground: 30 33% 73%;
+    --sidebar-border: 198 35% 20%;
+    --sidebar-ring: 30 33% 73%;
+  }
+}
+
+@layer base {
+  /* Typography Premium Classes - Optimized for responsiveness */
+  .titulo-premium-h1 {
+    @apply font-montserrat font-bold text-primary leading-[0.95] tracking-tight;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+  }
+
+  @media (min-width: 768px) {
+    .titulo-premium-h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .titulo-premium-h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+    }
+  }
+
+  .subtitulo-premium {
+    @apply font-montserrat font-medium text-brand-cloud leading-relaxed;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  @media (min-width: 768px) {
+    .subtitulo-premium {
+      font-size: clamp(1.125rem, 2.5vw, 1.75rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .subtitulo-premium {
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+    }
+  }
+
+  /* CTA Button Optimization - Better proportions */
+  .cta-primary {
+    @apply bg-gradient-accent hover:scale-105 active:scale-95 text-brand-black font-montserrat font-bold transition-elegant duration-300 shadow-premium hover:shadow-card-hover border-2 border-brand-caramel/20;
+    /* Optimized mobile-first sizing */
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .cta-primary {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cta-primary {
+      padding: 1.25rem 2.5rem;
+      font-size: 1.125rem;
+      border-radius: 1rem;
+    }
+  }
+
+  /* Remove production debug tools */
+  .lovable-badge,
+  .lovable-edit-button,
+  [data-lovable],
+  .development-only,
+  .debug-panel {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Layout Fixes - Prevent overlapping and ensure proper spacing */
+  .section-container {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .hero-section {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content-section {
+    position: relative;
+    z-index: 20;
+    background: hsl(var(--background));
+    margin-top: 0;
+    padding-top: 2rem;
+  }
+
+  /* Fix badge positioning and intensity */
+  .badge-enhanced {
+    box-shadow: 0 4px 12px hsl(var(--brand-caramel) / 0.3);
+    border: 1px solid hsl(var(--brand-caramel) / 0.2);
+  }
+
+  /* Ensure proper container spacing */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 3rem;
+    }
+  }
+
+  /* Improved mobile touch targets - Following iOS HIG and Material Design */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation; /* Prevents double-tap zoom */
+  }
+  
+  @media (max-width: 767px) {
+    button, .btn, a[role="button"], [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+      touch-action: manipulation;
+    }
+    
+    /* Improve tap highlighting */
+    button, a, [role="button"] {
+      -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
+  }
+
+  /* Enhanced focus visibility for accessibility */
+  .focus-visible-enhanced:focus-visible {
+    outline: 2px solid hsl(var(--brand-caramel));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px hsl(var(--brand-caramel) / 0.2);
+  }
+  
+  /* Reduced motion accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .titulo-premium-h1,
+    .subtitulo-premium {
+      filter: contrast(1.2);
+    }
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+    /* Enhanced text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Enhanced accessibility classes */
+  .sr-only-focusable:focus {
+    @apply not-sr-only;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .text-contrast-high {
+      color: hsl(var(--foreground));
+      background: hsl(var(--background));
+    }
+  }
+
+  /* Reduced motion support - Enhanced */
+  @media (prefers-reduced-motion: reduce) {
+    *, 
+    *::before, 
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transform: none !important;
+    }
+  }
+
+  /* Touch manipulation for better mobile performance */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Focus styles enhanced */
+  .focus-visible-enhanced {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
+  }
+  
+  /* Touch target optimization */
+  .touch-target {
+    @apply min-h-[56px] min-w-[56px];
+  }
+
+
+  /* Loading states - Enhanced */
+  .loading-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Touch targets for mobile accessibility */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Enhanced focus visibility */
+  .focus-visible-enhanced {
+    @apply focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+
+  /* Stagger animation delays for performance */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+
+  /* Skip to content link - Enhanced */
+  .skip-to-content {
+    position: fixed;
+    top: -40px;
+    left: 16px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    z-index: 1000;
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.3);
+  }
+
+  .skip-to-content:focus {
+    top: 16px;
+  }
+
+  /* Touch targets - Minimum 44px for accessibility */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Focus management - Enhanced */
+  .focus-visible-enhanced:focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  /* Hover Effects - Enhanced for accessibility */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover,
+  .hover-lift:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow:hover,
+  .hover-glow:focus-visible {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Core Web Vitals optimizations */
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
+
+  .contain-strict {
+    contain: strict;
+  }
+
+  /* Image optimization */
+  .optimized-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Font rendering optimizations */
+  .text-optimized {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  /* Scroll performance */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    scroll-margin-top: 2rem;
+  }
+
+  /* Touch optimization */
+  .touch-optimized {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Memory-efficient animations */
+  @keyframes fade-in-optimized {
+    from { 
+      opacity: 0; 
+      transform: translate3d(0, 10px, 0);
+    }
+    to { 
+      opacity: 1; 
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .animate-fade-in-optimized {
+    animation: fade-in-optimized 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Critical above-the-fold styles */
+  .hero-container {
+    min-height: 100vh;
+    contain: layout style;
+  }
+
+  .hero-content {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Reduce layout shifts */
+  .aspect-ratio-16-9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-ratio-1-1 {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-ratio-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Optimized content layout - prevent oversized elements on desktop */
+  .content-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media (min-width: 1280px) {
+    .content-container {
+      max-width: 1200px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .content-container {
+      max-width: 1400px;
+    }
+  }
+
+  /* Improved text legibility */
+  .text-legible {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* GPU acceleration for animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* ========== HIDE LOVABLE BADGE ========== */
+  /* Remove o badge "Edit in Lovable" do canto inferior direito */
+  [data-lovable-badge],
+  [class*="lovable-badge"],
+  [class*="edit-badge"],
+  iframe[src*="lovable"],
+  div[style*="position: fixed"][style*="bottom"][style*="right"][style*="z-index"]:has(a[href*="lovable"]),
+  div[style*="position:fixed"][style*="bottom"][style*="right"]:has(a[href*="lovable"]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Esconde qualquer elemento fixo suspeito no canto direito inferior */
+  div[style*="position: fixed"][style*="bottom: 16px"][style*="right: 16px"],
+  div[style*="position: fixed"][style*="bottom: 20px"][style*="right: 20px"],
+  div[style*="position: fixed"][style*="bottom: 24px"][style*="right: 24px"],
+  .lovable-floating-badge {
+    display: none !important;
+  }
+}
