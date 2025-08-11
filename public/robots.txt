@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nivela.bembeauty.com.br/sitemap.xml
