@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "installCommand": "npm ci || npm install",
+  "installCommand": "npm install",
   "outputDirectory": "dist",
 
   "headers": [
